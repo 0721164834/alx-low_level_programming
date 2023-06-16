@@ -1,2 +1,2 @@
 #!/bin/bash
-CFILE="your_c_file.c"
+export CFILE=0-main.c ; ./0-preprocessor 
