@@ -1,11 +1,2 @@
 #!/bin/bash
 
-# Check if the $CFILE variable is set
-if [ -z "$CFILE" ]; then
-    echo "Error: C file not specified. Set the CFILE variable to the desired C file name."
-    exit 1
-fi
-# Extract the file name without the extension
-filename=$(basename "$CFILE" .c)
-# Compile the C file without linking
-gcc -c "$CFILE" -o "$filename.o"
