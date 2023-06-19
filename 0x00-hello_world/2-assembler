@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -S -masm=intel input_file.c -o output_file.s
