@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(){
+    char cfile[100];
+    scanf("%s", cfile);
+    char ofile[100];
+    strcpy(ofile, cfile);
+    int len = strlen(ofile);
+    ofile[len-1] = 'o'; // replace .c with .o
+    char cmd[100];
+    sprintf(cmd, "gcc -c %s -o %s", cfile, ofile);
+    system(cmd);
+    return 0;
+}
