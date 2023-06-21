@@ -6,7 +6,7 @@ void custom_putchar(char c)
 }
 int main(void)
 {
-	char text[] = "_putchar";
+	char text[] = "__putchar";
 	int i = 0;
 
 	while (text[i] != '\0')

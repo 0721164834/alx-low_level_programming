@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 void times_table(void)
 {
 	int multiplier = 0;
@@ -8,4 +8,9 @@ void times_table(void)
 		printf("%d * 9 = %d\n", multiplier, multiplier * 9);
 		multiplier++;
 	}
+}
+int main(void)
+{
+	times_table();
+	return (0);		
 }
