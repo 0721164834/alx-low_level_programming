@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void printAlphabet()
+void printAlphabet(void)
 {
 	char letter = 'a';
 
@@ -10,10 +10,4 @@ void printAlphabet()
 		letter++;
 	}
 	printf("\n");
-}
-
-int main()
-{
-	printAlphabet();
-	return 0;
 }

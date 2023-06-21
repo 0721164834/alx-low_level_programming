@@ -1,6 +1,5 @@
-#include <stdio.h>
-
-void times_table()
+#include "stdio.h"
+void times_table(void)
 {
 	int multiplier = 0;
 
