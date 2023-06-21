@@ -1,18 +1,13 @@
-#include <unistd.h>
-/*Declear a functio custom_putchar*/
-void custom_putchar(char c)
-{
-	write(1, &c, 1);
-}
-int main(void)
-{
-	char text[] = "__putchar";
-	int i = 0;
+#include <stdio.h>
 
-	while (text[i] != '\0')
+void print_alphabet(void)
+{
+	char alphabet[27] = "abcdefghijklmnopqrstuvwxyz\n";
+	char* ptr = alphabet;
+	while (*ptr != '\0')
 	{
-		custom_putchar(text[i]);
-		i++;
+		_putchar(*ptr);
+		ptr++;
 	}
-	return (0);
 }
+
