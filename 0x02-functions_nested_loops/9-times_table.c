@@ -5,7 +5,7 @@ void times_table(void)
 
 	while (multiplier <= 10)
 	{
-		putchar("char * 9 = %d\n", multiplier, multiplier * 9);
+		_putchar("%d * 9 = %d\n", multiplier, multiplier * 9);
 		multiplier++;
 	}
 }
