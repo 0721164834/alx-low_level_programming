@@ -1,14 +1,20 @@
-void print_alphabet();
 #include "main.h"
-void print_alphabet(void)
+/**
+ * main - Entry point
+ * Return: Always 0
+ */
+int main(void)
 {
-	char alphabet[27] = "abcdefghijklmnopqrstuvwxyz\n";
-	char *ptr = alphabet;
-
-	while (*ptr != '\0')
-	{
-		_putchar(*ptr);
-		ptr++;
-	}
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
 }
+
 

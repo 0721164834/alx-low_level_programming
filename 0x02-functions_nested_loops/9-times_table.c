@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+* main - check the code for Holberton School students.
+*
+* Return: Always 0.
+*/
 void times_table(void)
 {
 	int multiplier = 0;
