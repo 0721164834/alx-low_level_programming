@@ -4,27 +4,21 @@
 *
 * Return: Always 0.
 */
+#include <stdio.h>
+
 void print_alphabet_x10(void)
 {
 	char letter = 'a';
-	int count = 0;
 
-	while (count < 10)
+	for (int i = 0; i < 10; i++)
 	{
-		char currentLetter = letter;
-
-		while (currentLetter <= 'z')
+		for (int j = 0; j < 26; j++)
 		{
-			_putchar(currentLetter);
-			currentLetter++;
+			_putchar(letter);
+			letter++;
 		}
+		_putchar('\n');
 		letter = 'a';
-		count++;
-
-		if (count < 10)
-		{
-			_putchar('\n');
-		}
 	}
-	_putchar('\n');
 }
+
