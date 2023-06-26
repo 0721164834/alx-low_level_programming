@@ -10,16 +10,14 @@
 unsigned long int largestPrimeFactor(unsigned long int n)
 {
 	unsigned long int largestFactor = 0;
+	unsigned long int sqrtN = sqrt(n);
+        unsigned long int i = 3;
 
 	while (n % 2 == 0)
 	{
 		largestFactor = 2;
 		n /= 2;
 	}
-
-	unsigned long int sqrtN = sqrt(n);
-
-	unsigned long int i = 3;
 
 	for (; i <= sqrtN; i += 2)
 	{

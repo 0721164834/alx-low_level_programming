@@ -7,13 +7,16 @@
  */
 void print_number(int n)
 {
+	int divisor;
+
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
 
-	int divisor = 1;
+
+	divisor = 1;
 
 	while (n / divisor > 9)
 	{
