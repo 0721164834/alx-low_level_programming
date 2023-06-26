@@ -8,24 +8,25 @@
  */
 void print_triangle(int size)
 {
+	int x, y, z;
+
 	if (size <= 0)
 	{
 		_putchar('\n');
 	}
 	else
 	{
-		int i = 1;
-
-		for (; i <= size; i++)
+		for (x = 0; x < size; x++)
 		{
-			int j = 0;
-
-			for (; j < i; j++)
+			for (y = size - x; y > 1; y--)
 			{
-				_putchar('#');
+				_putchar(32);
+			}
+			for (z = 0; z <= x; z++)
+			{
+				_putchar(35);
 			}
 			_putchar('\n');
 		}
 	}
 }
-
