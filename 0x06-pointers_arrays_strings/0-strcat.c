@@ -9,24 +9,21 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	char *ptr = dest;
+	char *temp = dest;
 
-	/*move the pointer to the end of dest*/
-	while (*ptr != '\0')
+	/*Find rhe end of dest string*/
+	while (*temp != '\0')
 	{
-		ptr++;
+		temp++;
 	}
-
-	/*Append src to dest*/
+	/*Copy the src string to the end of dest*/
 	while (*src != '\0')
 	{
-		*ptr = *src;
-		ptr++;
+		*temp = *src;
+		temp++;
 		src++;
 	}
-
 	/*Add a terminating null byte*/
-	*ptr = '\0';
-
-	return (0);
+	*temp = '\0';
+	return (dest);
 }
