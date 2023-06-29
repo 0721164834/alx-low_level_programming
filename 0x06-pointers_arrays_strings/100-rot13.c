@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 /**
@@ -10,27 +11,28 @@
  */
 char *rot13(char *str)
 {
-	/*Create a copy of the input string*/
-	size_t len = strlen(str);
-	char *encoded = (char *)malloc((len + 1) * sizeof(char));
-	long unsigned int i;
-	int j;
-	int offset;
+	char *result = malloc(strlen(str) + 1);
+	int i, j;
+	char ch;
 
-	strcpy(encoded, str);
-	/*Perform the encoding*/
-	for  (i = 0; i < len; i++)
+	if (result == NULL)
 	{
-		for (j = 0; j < 2; j++)
-		{
-			offset = (j == 0) ? 13 : -13;
-			if ((encoded[i] >= 'A' && encoded[i] <= 'Z') ||
-				(encoded[i] >= 'a' && encoded[i] <= 'z'))
-			{
-			encoded[i] = (encoded[i] - 'A' + offset + 26) % 26 + 'A' + j * 32;
-			break;
-			}
-		}
+		fprintf(stderr, "Memory allocation failed.\n");
+		exit(1);
 	}
-	return (encoded);
+	for (i = 0, j = 0; str[i] != '\0'; i++)
+	{
+		ch = str[i];
+		if (ch >= 'a' && ch <= 'z')
+		{
+			ch = (ch - 'a' + 13) % 26 + 'a';
+		}
+		else if (ch >= 'A' && ch <= 'Z')
+		{
+			ch = (ch - 'A' && ch <= 'Z');
+		}
+		result[j++] = ch;
+	}
+	result[i] = '\0';
+	return (result);
 }
