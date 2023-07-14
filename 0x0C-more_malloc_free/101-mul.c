@@ -3,70 +3,36 @@
 #include <ctype.h>
 #include <stdio.h>
 /**
- * valdate_input - check if the input is positive integers
- * @str: char
- *
- * Return: 1
- */
-int valdate_input(char *str)
-{
-	int i = 0;
-
-	while (str[i] != '\0')
-	{
-		if (!isdigit(str[i]))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-/**
- * multiply_numbers - multply two postive numbers
- * @num1: number 1
- * @num2: number 2
- *
- * Return: num1 * num2
- */
-int multiply_numbers(int num1, int num2)
-{
-	return (num1 * num2);
-}
-/**
  * print_number - print_number
- * @number: number
+ * @n: number
  *
  * Return: nothing
  */
-void print_number(int number)
+void print_number(int n)
 {
-	char buffer[10];
-	int i, j;
-
-	if (number < 0)
+	if (n < 0)
 	{
 		_putchar('-');
-		number = -number;
+		n = -n;
 	}
-	if (number == 0)
-	{
-		_putchar('0');
-		_putchar('\n');
-		return;
-	}
-	/*buffer[10];*/
-	i = 0;
-	while (number > 0)
-	{
-		buffer[i++] = '0' + (number % 10);
-		number /= 10;
-	}
-	for (j = i - 1; j >= 0; j--)
-	{
-		_putchar(buffer[j]);
-	}
-	_putchar ('\n');
+	if (n / 10)
+		print_number(n / 10);
+	_putchar(n % 10 + '0');
+}
+/**
+ * is_number - check for a postive number
+ * @s: char
+ *
+ * Return: 1
+ */
+int is_number(char *s)
+{
+	int i;
+
+	for (i = 0; s[i]; i++)
+		if (!isdigit(s[i]))
+			return (0);
+	return (1);
 }
 /**
  * main - check code
@@ -75,7 +41,7 @@ void print_number(int number)
  *
  * Return:0
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int num1, num2, result;
 
@@ -89,7 +55,7 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		return (98);
 	}
-	if (!valdate_input(argv[1]) || !valdate_input(argv[2]))
+	if (!is_number(argv[1]) || !is_number(argv[2]))
 	{
 		_putchar('E');
 		_putchar('r');
@@ -101,7 +67,8 @@ int main(int argc, char *argv[])
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
-	result = multiply_numbers(num1, num2);
+	result = num1 * num2;
 	print_number(result);
+	_putchar('\n');
 	return (0);
 }
