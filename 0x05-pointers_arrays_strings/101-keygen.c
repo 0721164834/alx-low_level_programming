@@ -41,12 +41,11 @@ void generatePassword(char *password)
  */
 int main(void)
 {
-	srand(time(NULL));
-
 	char password[PASSWORD_LENGTH + 1];
 
+	srand(time(NULL));
 	generatePassword(password);
 
-	printf("Generated Password: %s\n", password);
+	printf("%s\n", password);
 	return (0);
 }
