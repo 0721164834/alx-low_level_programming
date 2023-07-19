@@ -1,48 +1,46 @@
-#include <stdio.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
- * print_opcodes - takes integer as input and prints the opcodes of the main function in hexadecimal
- * @num_bytes: input integer
+ * print_opcodes - this program prints opcodes of its own function
+ * @x: passed arguments number
+ * @m: number of argumrnts
  *
  * Return: nothing
  */
-void print_opcodes(int num_bytes)
+void print_opcodes(char *x, int m)
 {
-	unsigned char* main_ptr = (unsigned char*)print_opcodes;
 	int i;
 
-	for (i = 0; i < num_bytes; i++)
+	for (i = 0; i < m; i++)
 	{
-		printf("%02x", *(main_ptr + i));
+		printf("%.2hhx", x[i]);
+		if (i < m - 1)
+			printf(" ");
 	}
 	printf("\n");
 }
-
 /**
- * main - check the code
+ * main - check code
  * @argc: argument code
  * @argv: argument vector
  *
  * Return: 0
  */
-int main(int argc, char* argv[])
+int main(int argc, char **argv)
 {
-	int num_bytes;
+	int n;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
-	
-	num_bytes = atoi(argv[1]);
-	if (num_bytes < 0)
+	n = atoi(argv[1]);
+	if (n < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
-
-	print_opcodes(num_bytes);
+	print_opcodes((char *)&main, n);
 	return (0);
 }
