@@ -10,13 +10,6 @@
 void print_name(char *name, void (*f)(char *))
 {
 	/*Call the function pointer with the name as an argument*/
+	if (name != NULL && f != NULL)
 	f(name);
-}
-/**
- * print - function to print the name
- * @name: name
- */
-void print(char *name)
-{
-	printf("%s\n", name);
 }
