@@ -10,7 +10,7 @@
 void print_name(char *name, void (*f)(char *))
 {
 	/*Call the function pointer with the name as an argument*/
-	(*f)(name);
+	f(name);
 }
 /**
  * print - function to print the name
