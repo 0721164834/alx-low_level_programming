@@ -1,20 +1,12 @@
-section .data
-	hello_msg db "Hello, Holberton,", 0
-	format db "%s\n", 0
-
-section .text
+global main
 	extern printf
 
-global _start
-
-_start:
-	;Call printf to print the message
-	mov rdi, format
-	mov rsi, hello_msg
-	xor rax, rax ; Clear RAX register for vararg
+main:
+	mov edi, format
+	xor eax, eax
 	call printf
+	mov	eax, 0
+	ret
 
-	;Exit the program
-	mov rax, 60	;syscall: sys_exit
-	xor rdi, rdi	;status: 0
-	syscall
+format:
+	db "Hello, Holberton\n",0
