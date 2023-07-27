@@ -1,13 +1,20 @@
 section .data
-	hello_fmt db "Hello, Holberton,", 0
+	hello_msg db "Hello, Holberton,", 0
+	format db "%s\n", 0
 
 section .text
-	global print_hello
 	extern printf
 
-print_hello:
-	push rbp
-	mov rdi, hello_fmt
+global _start
+
+_start:
+	;Call printf to print the message
+	mov rdi, format
+	mov rsi, hello_msg
+	xor rax, rax ; Clear RAX register for vararg
 	call printf
-	pop rbp
-	ret
+
+	;Exit the program
+	mov rax, 60	;syscall: sys_exit
+	xor rdi, rdi	;status: 0
+	syscall
