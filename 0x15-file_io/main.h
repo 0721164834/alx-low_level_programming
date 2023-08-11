@@ -27,7 +27,7 @@ int append_text_to_file(const char *filename, char *text_content);
  * @e_shnum: Number of section header entries
  * @e_shstrndx: section name of the string table idex
  */
-typedef struct void
+typedef struct
 {
 	unsigned char e_ident[16];
 	uint16_t e_type;
