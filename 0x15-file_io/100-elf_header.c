@@ -5,6 +5,12 @@
 #include <stdint.h>
 #include "main.h"
 /**
+ * print_elf_header_info - Prints information from ELF header
+ * @header: Pointer to the ELF header file structure
+ *
+ * prints various fileds from the Elf header.
+ *
+ * Return nothing
  */
 void print_elf_header_info(const Elf64_Ehdr *header)
 {
@@ -12,7 +18,8 @@ void print_elf_header_info(const Elf64_Ehdr *header)
 			header->e_ident[0], header->e_ident[1],
 			header->e_ident[2], header->e_ident[3]);
 	printf("Class: %d-bit\n", header->e_ident[4] == 1 ? 32 : 64);
-	printf("Data: %s\n", header->e_ident[5] == 1 ? " Little Endian" : "Big Edian");
+	printf("Data: %s\n", header->e_ident[5] == 1 ? " Little Endian" : "Big Edian")
+		;
 	printf("Version: %d\n", header->e_ident[6]);
 	printf("OS/ABI: %d\n", header->e_ident[7]);
 	printf("ABI Version: %d\n", header->e_ident[8]);
@@ -20,6 +27,15 @@ void print_elf_header_info(const Elf64_Ehdr *header)
 	printf("Entry point address: Ox%lx\n", header->e_entry);
 }
 /**
+ * main - check the program
+ * @argc: argument count
+ * @argv: Array of argument strings
+ *
+ * Reads and displays the information contained in the ELF headerof an ELF file.
+ * If the fike is not an ELF file or an error occurs, an appropriate error is 
+ * displayed.
+ *
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
