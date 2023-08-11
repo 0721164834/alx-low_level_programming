@@ -11,7 +11,7 @@ int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 
 /**
- * struct void - ELF header structure
+ * struct Elf64_Ehdr - ELF header structure
  * @e_ident: Magic number and other identification
  * @e_type: Object file type
  * @e_machine: Architecture type
@@ -27,7 +27,7 @@ int append_text_to_file(const char *filename, char *text_content);
  * @e_shnum: Number of section header entries
  * @e_shstrndx: section name of the string table idex
  */
-typedef struct
+typedef struct Elf64_Ehdr
 {
 	unsigned char e_ident[16];
 	uint16_t e_type;
