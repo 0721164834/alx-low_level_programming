@@ -26,4 +26,12 @@
 <ul>
 <li>Prototype: unsigned int flip_bits(unsigned long int n, unsigned long int m);</li>
 <li>You are not allowed to use the % or / operators</li>
-
+<li>You are not allowed to use the % or / operators</li></ul>
+6. Endianness; Write a function that checks the endianness.
+<ul><li>Prototype: int get_endianness(void);</li>
+<li>Returns: 0 if big endian, 1 if little endian</li>
+<ul>
+7. Crackme3; Find the password for this program.
+<ul>
+<li>Save the password in the file 101-password</li>
+<li>Your file should contain the exact password, no new line, no extra space</li>
